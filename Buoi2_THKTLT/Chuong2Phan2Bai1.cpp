@@ -133,16 +133,16 @@ void bai1() {
 
 	
 	//Cau 5
-	interchangeSort(a, n, true);
+	/*interchangeSort(a, n, true);
 	printf("Mang sau khi sap xep tang dan (InterchangeSort)\n");
 	xuatMang(a, n);
-	timKiemNhiPhan(a, n, 36);
+	timKiemNhiPhan(a, n, 36);*/
 
 
 	//Cau 6
-	/*selectionSort(a, n);
+	selectionSort(a, n);
 	printf("Mang sau khi sap xep tang dan (SelectionSort)\n");
-	xuatMang(a, n);*/
+	xuatMang(a, n);
 
 
 
