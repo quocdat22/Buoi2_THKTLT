@@ -127,7 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Bai1.cpp" />
+    <ClCompile Include="Chuong2Phan2Bai1.cpp" />
     <ClCompile Include="Buoi2_THKTLT.cpp" />
   </ItemGroup>
   <ItemGroup>
