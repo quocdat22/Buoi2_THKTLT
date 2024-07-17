@@ -44,6 +44,29 @@ void timKiemTuyenTinh(int* a, int n, int x) {
 	
 }
 
+//Sắp xếp a tăng dần/giảm dần theo giải thuật Interchange Sort
+void interchangeSort(int*& a, int n, bool tang) {
+	for (int i = 0; i < n - 1; i++) {
+		for (int j = i + 1; j < n; j++) {
+			if (tang) {
+				if (a[i] > a[j]) {
+					int x = a[i];
+					a[i] = a[j];
+					a[j] = x;
+				}
+			}
+			else {
+				if (a[i] < a[j]) {
+					int x = a[i];
+					a[i] = a[j];
+					a[j] = x;
+				}
+			}
+		}
+	}
+}
+
+
 
 
 void bai1() {
@@ -61,7 +84,15 @@ void bai1() {
 	//taoMangChan(a, n);
 
 	//Cau 3
-	timKiemTuyenTinh(a, n, 36);
+	//timKiemTuyenTinh(a, n, 36);
+
+	//Cau 4
+	interchangeSort(a, n, true);
+	printf("Mang sau khi sap xep tang dan (InterchangeSort)\n");
+	xuatMang(a, n);
+	interchangeSort(a, n, false);
+	printf("Mang sau khi sap xep giam dan (InterchangeSort)\n");
+	xuatMang(a, n);
 
 	
 
