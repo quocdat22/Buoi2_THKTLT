@@ -52,6 +52,39 @@ void inDanhSachHonSo(HonSo b[], int n) {
 }
 
 
+void soSanhHonSo(HonSo a, HonSo b) {
+	float x = (float)a.nguyen + (float)a.tu / a.mau;
+	float y = (float)b.nguyen + (float)b.tu / b.mau;
+	
+	if (x > y) {
+		printf("Hỗn số (%d %d/%d) > Hỗn số (%d %d/%d)\n",a.nguyen,a.tu,a.mau,b.nguyen,b.tu,b.mau);
+		//return 1;
+	}
+	else if (x < y) {
+		printf("Hỗn số (%d %d/%d) < Hỗn số (%d %d/%d)\n", a.nguyen, a.tu, a.mau, b.nguyen, b.tu, b.mau);
+		//return -1;
+	}
+	else {
+		printf("Hai hỗn số bằng nhau: (%d %d/%d) = (%d %d/%d)\n", a.nguyen, a.tu, a.mau, b.nguyen, b.tu, b.mau);
+		//return 0;
+	}
+}
+
+void thucHienSoSanh2HonSo(HonSo* b, int n) {
+	//chọn ngẫu nhiên 2 hỗn số trong mảng b
+	int i = rand() % n;
+	int j = rand() % n;
+	while (i == j) {
+		j = rand() % n;
+	}
+
+	HonSo a = b[i];
+	HonSo c = b[j];
+
+
+	printf("\nCâu 3.\nHai số so sánh ngẫu nhiên trong danh sách là: %d.(%d %d/%d) và %d.(%d %d/%d)\n",i , a.nguyen, a.tu, a.mau, j, c.nguyen, c.tu, c.mau);
+	soSanhHonSo(a, c);
+}
 
 
 void phan2Bai2() {
@@ -68,6 +101,9 @@ void phan2Bai2() {
 	printf("Danh sách hỗn số ngẫu nhiên:\n");
 	//inMangHonSo(b, n);
 	inDanhSachHonSo(b, n);
+
+	//cau 3
+	thucHienSoSanh2HonSo(b, n);
 
 	return;
 }
