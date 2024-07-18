@@ -190,8 +190,7 @@ void thucHienTinhToan2HonSo(HonSo* b, int n) {
 	tinhThuongHaiHonSo(a, c);
 }
 
-//sap xep tang dan
-// 
+
 void swapHonSo(HonSo &a, HonSo &b){
 	HonSo temp = a;
 	a = b;
@@ -226,6 +225,44 @@ void sapXepGiamDanInterchangeSort(HonSo* b, int n) {
 	inDanhSachHonSo(b, n);
 }
 
+// sap xep theo thuat toan selection sort
+void sapXepTangDanSelectionSort(HonSo* b, int n) {
+	for (int i = 0; i < n - 1; i++) {
+		int min = i;
+		for (int j = i + 1; j < n; j++) {
+			float x = (float)b[min].nguyen + (float)b[min].tu / b[min].mau;
+			float y = (float)b[j].nguyen + (float)b[j].tu / b[j].mau;
+			if (x > y) {
+				min = j;
+			}
+		}
+		if (min != i) {
+			swapHonSo(b[i], b[min]);
+		}
+	}
+	printf("\nDanh sách hỗn số sau khi sắp xếp tăng dần (Selection Sort):\n");
+	inDanhSachHonSo(b, n);
+}
+
+void sapXepGiamDanSelectionSort(HonSo* b, int n) {
+	for (int i = 0; i < n - 1; i++) {
+		int min = i;
+		for (int j = i + 1; j < n; j++) {
+			float x = (float)b[min].nguyen + (float)b[min].tu / b[min].mau;
+			float y = (float)b[j].nguyen + (float)b[j].tu / b[j].mau;
+			if (x < y) {
+				min = j;
+			}
+		}
+		if (min != i) {
+			swapHonSo(b[i], b[min]);
+		}
+	}
+	printf("\nDanh sách hỗn số sau khi sắp xếp giảm dần (Selection Sort):\n");
+	inDanhSachHonSo(b, n);
+}
+
+
 
 
 
@@ -257,8 +294,15 @@ void phan2Bai2() {
 	//cau 6
 	//thucHienTinhToan2HonSo(b, n);
 
-	sapXepTangDanInterchangeSort(b, n);
-	sapXepGiamDanInterchangeSort(b, n);
+	//cau 7
+	//interchange sort
+	/*sapXepTangDanInterchangeSort(b, n);
+	sapXepGiamDanInterchangeSort(b, n);*/
+
+	//selection sort
+	sapXepTangDanSelectionSort(b, n);
+	sapXepGiamDanSelectionSort(b, n);
+
 	
 
 	free(b);
