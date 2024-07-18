@@ -18,7 +18,10 @@
     <ClCompile Include="Buoi2_THKTLT.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Chuong2Phan2Bai1.cpp">
+    <ClCompile Include="Phan2Bai1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="QuickSort.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

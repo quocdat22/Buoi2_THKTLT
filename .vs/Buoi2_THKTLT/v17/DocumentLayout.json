@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\datho\\OneDrive\\Documents\\CNTT\\Ky thuat lap trinh\\thuc hanh\\Buoi2_THKTLT\\Buoi2_THKTLT\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1A3B0923-BA66-49B7-975A-8DDCD66286F5}|Buoi2_THKTLT\\Buoi2_THKTLT.vcxproj|C:\\Users\\datho\\OneDrive\\Documents\\CNTT\\Ky thuat lap trinh\\thuc hanh\\Buoi2_THKTLT\\Buoi2_THKTLT\\Buoi2_THKTLT\\Chuong2Phan2Bai1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{1A3B0923-BA66-49B7-975A-8DDCD66286F5}|Buoi2_THKTLT\\Buoi2_THKTLT.vcxproj|solutionrelative:Buoi2_THKTLT\\Chuong2Phan2Bai1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{1A3B0923-BA66-49B7-975A-8DDCD66286F5}|Buoi2_THKTLT\\Buoi2_THKTLT.vcxproj|C:\\Users\\datho\\OneDrive\\Documents\\CNTT\\Ky thuat lap trinh\\thuc hanh\\Buoi2_THKTLT\\Buoi2_THKTLT\\Buoi2_THKTLT\\Phan2Bai1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1A3B0923-BA66-49B7-975A-8DDCD66286F5}|Buoi2_THKTLT\\Buoi2_THKTLT.vcxproj|solutionrelative:Buoi2_THKTLT\\Phan2Bai1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1A3B0923-BA66-49B7-975A-8DDCD66286F5}|Buoi2_THKTLT\\Buoi2_THKTLT.vcxproj|C:\\Users\\datho\\OneDrive\\Documents\\CNTT\\Ky thuat lap trinh\\thuc hanh\\Buoi2_THKTLT\\Buoi2_THKTLT\\Buoi2_THKTLT\\Buoi2_THKTLT.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -27,14 +27,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Chuong2Phan2Bai1.cpp",
-              "DocumentMoniker": "C:\\Users\\datho\\OneDrive\\Documents\\CNTT\\Ky thuat lap trinh\\thuc hanh\\Buoi2_THKTLT\\Buoi2_THKTLT\\Buoi2_THKTLT\\Chuong2Phan2Bai1.cpp",
-              "RelativeDocumentMoniker": "Buoi2_THKTLT\\Chuong2Phan2Bai1.cpp",
-              "ToolTip": "C:\\Users\\datho\\OneDrive\\Documents\\CNTT\\Ky thuat lap trinh\\thuc hanh\\Buoi2_THKTLT\\Buoi2_THKTLT\\Buoi2_THKTLT\\Chuong2Phan2Bai1.cpp",
-              "RelativeToolTip": "Buoi2_THKTLT\\Chuong2Phan2Bai1.cpp",
-              "ViewState": "AQIAAH8AAAAAAAAAAAAAAI4AAAAVAAAA",
+              "Title": "Phan2Bai1.cpp",
+              "DocumentMoniker": "C:\\Users\\datho\\OneDrive\\Documents\\CNTT\\Ky thuat lap trinh\\thuc hanh\\Buoi2_THKTLT\\Buoi2_THKTLT\\Buoi2_THKTLT\\Phan2Bai1.cpp",
+              "RelativeDocumentMoniker": "Buoi2_THKTLT\\Phan2Bai1.cpp",
+              "ToolTip": "C:\\Users\\datho\\OneDrive\\Documents\\CNTT\\Ky thuat lap trinh\\thuc hanh\\Buoi2_THKTLT\\Buoi2_THKTLT\\Buoi2_THKTLT\\Phan2Bai1.cpp",
+              "RelativeToolTip": "Buoi2_THKTLT\\Phan2Bai1.cpp",
+              "ViewState": "AQIAAKUAAAAAAAAAAAAiwLEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-07-17T06:16:22.636Z",
+              "WhenOpened": "2024-07-18T06:48:17.182Z",
               "EditorCaption": ""
             },
             {
@@ -45,9 +45,10 @@
               "RelativeDocumentMoniker": "Buoi2_THKTLT\\BaiTap.h",
               "ToolTip": "C:\\Users\\datho\\OneDrive\\Documents\\CNTT\\Ky thuat lap trinh\\thuc hanh\\Buoi2_THKTLT\\Buoi2_THKTLT\\Buoi2_THKTLT\\BaiTap.h",
               "RelativeToolTip": "Buoi2_THKTLT\\BaiTap.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAMAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-07-17T06:16:03.974Z"
+              "WhenOpened": "2024-07-17T06:16:03.974Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -57,9 +58,10 @@
               "RelativeDocumentMoniker": "Buoi2_THKTLT\\Buoi2_THKTLT.cpp",
               "ToolTip": "C:\\Users\\datho\\OneDrive\\Documents\\CNTT\\Ky thuat lap trinh\\thuc hanh\\Buoi2_THKTLT\\Buoi2_THKTLT\\Buoi2_THKTLT\\Buoi2_THKTLT.cpp",
               "RelativeToolTip": "Buoi2_THKTLT\\Buoi2_THKTLT.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAALAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAALAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-07-17T06:12:38.626Z"
+              "WhenOpened": "2024-07-17T06:12:38.626Z",
+              "EditorCaption": ""
             }
           ]
         }

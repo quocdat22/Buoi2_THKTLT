@@ -3,5 +3,7 @@
 
 void bai1();
 
+void quickSort2();
+
 
 #endif
