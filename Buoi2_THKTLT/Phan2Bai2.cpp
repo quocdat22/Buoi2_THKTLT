@@ -50,7 +50,7 @@ void inMangHonSo(HonSo b[], int n) {
 void inDanhSachHonSo(HonSo b[], int n) {
 	printf("STT \t Hon so\n");
 	for (int i = 0; i < n; i++) {
-		printf("%d \t %d %d/%d", i, b[i].nguyen, b[i].tu, b[i].mau);
+		printf("%d \t (%d %d/%d)", i, b[i].nguyen, b[i].tu, b[i].mau);
 		//inHonSo(b[i]);
 		printf("\n");
 	}
@@ -190,6 +190,44 @@ void thucHienTinhToan2HonSo(HonSo* b, int n) {
 	tinhThuongHaiHonSo(a, c);
 }
 
+//sap xep tang dan
+// 
+void swapHonSo(HonSo &a, HonSo &b){
+	HonSo temp = a;
+	a = b;
+	b = temp;
+}
+//thuat toan interchange sort
+void sapXepTangDanInterchangeSort(HonSo* b, int n) {
+	for (int i = 0; i < n - 1; i++) {
+		for (int j = i + 1; j < n; j++) {
+			float x = (float)b[i].nguyen + (float)b[i].tu / b[i].mau;
+			float y = (float)b[j].nguyen + (float)b[j].tu / b[j].mau;
+			if (x > y) {
+				swapHonSo(b[i], b[j]);
+			}
+		}
+	}
+	printf("\nDanh sách hỗn số sau khi sắp xếp tăng dần (Interchange Sort):\n");
+	inDanhSachHonSo(b, n);
+}
+
+void sapXepGiamDanInterchangeSort(HonSo* b, int n) {
+	for (int i = 0; i < n - 1; i++) {
+		for (int j = i + 1; j < n; j++) {
+			float x = (float)b[i].nguyen + (float)b[i].tu / b[i].mau;
+			float y = (float)b[j].nguyen + (float)b[j].tu / b[j].mau;
+			if (x < y) {
+				swapHonSo(b[i], b[j]);
+			}
+		}
+	}
+	printf("\nDanh sách hỗn số sau khi sắp xếp giảm dần (Interchange Sort):\n");
+	inDanhSachHonSo(b, n);
+}
+
+
+
 
 
 void phan2Bai2() {
@@ -217,7 +255,11 @@ void phan2Bai2() {
 	//thucHienChuyenDoiPhanSoThanhHonSo();
 
 	//cau 6
-	thucHienTinhToan2HonSo(b, n);
+	//thucHienTinhToan2HonSo(b, n);
+
+	sapXepTangDanInterchangeSort(b, n);
+	sapXepGiamDanInterchangeSort(b, n);
+	
 
 	free(b);
 	return;
