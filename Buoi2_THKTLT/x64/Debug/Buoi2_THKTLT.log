@@ -1,3 +1,3 @@
 ﻿  Phan2Bai2.cpp
-C:\Users\datho\OneDrive\Documents\CNTT\Ky thuat lap trinh\thuc hanh\Buoi2_THKTLT\Buoi2_THKTLT\Buoi2_THKTLT\Phan2Bai2.cpp(148,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\datho\OneDrive\Documents\CNTT\Ky thuat lap trinh\thuc hanh\Buoi2_THKTLT\Buoi2_THKTLT\Buoi2_THKTLT\Phan2Bai2.cpp(196,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   Buoi2_THKTLT.vcxproj -> C:\Users\datho\OneDrive\Documents\CNTT\Ky thuat lap trinh\thuc hanh\Buoi2_THKTLT\Buoi2_THKTLT\x64\Debug\Buoi2_THKTLT.exe

@@ -144,6 +144,54 @@ void thucHienChuyenDoiHonSoThanhPhanSo(HonSo* b, int n) {
 }
 
 
+//Tính tổng, hiệu, tích, thương 2 hỗn số.
+void tinhTongHaiHonSo(HonSo a, HonSo b) {
+	float x = (float)a.nguyen + (float)a.tu / a.mau;
+	float y = (float)b.nguyen + (float)b.tu / b.mau;
+	float tong = x + y;
+	printf("Tổng: (%d %d/%d) + (%d %d/%d) = %.2f\n", a.nguyen, a.tu, a.mau, b.nguyen, b.tu, b.mau, tong);
+}
+void tinhHieuHaiHonSo(HonSo a, HonSo b) {
+	float x = (float)a.nguyen + (float)a.tu / a.mau;
+	float y = (float)b.nguyen + (float)b.tu / b.mau;
+	float hieu = x - y;
+	printf("Hiệu: (%d %d/%d) - (%d %d/%d) = %.2f\n", a.nguyen, a.tu, a.mau, b.nguyen, b.tu, b.mau, hieu);
+}
+void tinhTichHaiHonSo(HonSo a, HonSo b) {
+	float x = (float)a.nguyen + (float)a.tu / a.mau;
+	float y = (float)b.nguyen + (float)b.tu / b.mau;
+	float tich = x * y;
+	printf("Tích: (%d %d/%d) * (%d %d/%d) = %.2f\n", a.nguyen, a.tu, a.mau, b.nguyen, b.tu, b.mau, tich);
+}
+void tinhThuongHaiHonSo(HonSo a, HonSo b) {
+	float x = (float)a.nguyen + (float)a.tu / a.mau;
+	float y = (float)b.nguyen + (float)b.tu / b.mau;
+	float thuong = x / y;
+	printf("Thương: (%d %d/%d) / (%d %d/%d) = %.2f\n", a.nguyen, a.tu, a.mau, b.nguyen, b.tu, b.mau, thuong);
+}
+
+
+
+void thucHienTinhToan2HonSo(HonSo* b, int n) {
+	//chọn ngẫu nhiên 2 hỗn số trong mảng b
+	int i = rand() % n;
+	int j = rand() % n;
+	while (i == j) {
+		j = rand() % n;
+	}
+
+	HonSo a = b[i];
+	HonSo c = b[j];
+
+	printf("\nCâu 6.\nHai số tính toán ngẫu nhiên trong danh sách là: %d.(%d %d/%d) và %d.(%d %d/%d)\n", i, a.nguyen, a.tu, a.mau, j, c.nguyen, c.tu, c.mau);
+	tinhTongHaiHonSo(a, c);
+	tinhHieuHaiHonSo(a, c);
+	tinhTichHaiHonSo(a, c);
+	tinhThuongHaiHonSo(a, c);
+}
+
+
+
 void phan2Bai2() {
 	srand(time(NULL));
 
@@ -166,6 +214,11 @@ void phan2Bai2() {
 	//thucHienChuyenDoiHonSoThanhPhanSo(b, n);
 
 	//cau 5
-	thucHienChuyenDoiPhanSoThanhHonSo();
+	//thucHienChuyenDoiPhanSoThanhHonSo();
+
+	//cau 6
+	thucHienTinhToan2HonSo(b, n);
+
+	free(b);
 	return;
 }
