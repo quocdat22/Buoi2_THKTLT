@@ -21,7 +21,7 @@
     <ClCompile Include="Phan2Bai1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="QuickSort.cpp">
+    <ClCompile Include="Phan2Bai2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

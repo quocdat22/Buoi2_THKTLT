@@ -123,15 +123,20 @@ int partition(int arr[], int start, int end) {
 }
 
 void quickSort(int arr[], int start, int end) {
-	if (start < end) {
+	if(end <= start) return;
+	int pivot = partition(arr, start, end);
+	quickSort(arr, start, pivot - 1);
+	quickSort(arr, pivot + 1, end);
+
+	/*if (start < end) {
 		int pivot = partition(arr, start, end);
 		quickSort(arr, start, pivot - 1);
 		quickSort(arr, pivot + 1, end);
-	}
+	}*/
 }
 
 
-void bai1() {
+void phan2Bai1() {
 
 	srand(time(NULL));
 	int* a;

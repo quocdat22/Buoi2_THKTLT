@@ -1,9 +1,9 @@
 #ifndef BAITAP_H
 #define BAITAP_H
 
-void bai1();
+void phan2Bai1();
 
-void quickSort2();
+void phan2Bai2();
 
 
 #endif

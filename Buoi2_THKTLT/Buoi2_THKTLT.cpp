@@ -4,8 +4,11 @@
 
 int main()
 {
-    bai1();
+    phan2Bai2();
+    //phan2Bai1();
 
-    //quickSort2();
+   
+
+    return 0;
 }
 

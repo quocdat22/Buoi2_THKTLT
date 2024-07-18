@@ -129,7 +129,7 @@
   <ItemGroup>
     <ClCompile Include="Phan2Bai1.cpp" />
     <ClCompile Include="Buoi2_THKTLT.cpp" />
-    <ClCompile Include="QuickSort.cpp" />
+    <ClCompile Include="Phan2Bai2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaiTap.h" />
