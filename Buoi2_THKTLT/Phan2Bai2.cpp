@@ -262,6 +262,50 @@ void sapXepGiamDanSelectionSort(HonSo* b, int n) {
 	inDanhSachHonSo(b, n);
 }
 
+//sap xep theo thuat toan quick sort
+void quickSortTangDan(HonSo* b, int left, int right) {
+	int i = left, j = right;
+	float pivot = (float)b[(left + right) / 2].nguyen + (float)b[(left + right) / 2].tu / b[(left + right) / 2].mau;
+	while (i <= j) {
+		while ((float)b[i].nguyen + (float)b[i].tu / b[i].mau < pivot) i++;
+		while ((float)b[j].nguyen + (float)b[j].tu / b[j].mau > pivot) j--;
+		if (i <= j) {
+			swapHonSo(b[i], b[j]);
+			i++;
+			j--;
+		}
+	}
+	if (left < j) quickSortTangDan(b, left, j);
+	if (i < right) quickSortTangDan(b, i, right);
+}
+
+void sapXepTangDanQuickSort(HonSo* b, int n) {
+	quickSortTangDan(b, 0, n - 1);
+	printf("\nDanh sách hỗn số sau khi sắp xếp tăng dần (Quick Sort):\n");
+	inDanhSachHonSo(b, n);
+}
+
+void quickSortGiamDan(HonSo* b, int left, int right) {
+	int i = left, j = right;
+	float pivot = (float)b[(left + right) / 2].nguyen + (float)b[(left + right) / 2].tu / b[(left + right) / 2].mau;
+	while (i <= j) {
+		while ((float)b[i].nguyen + (float)b[i].tu / b[i].mau > pivot) i++;
+		while ((float)b[j].nguyen + (float)b[j].tu / b[j].mau < pivot) j--;
+		if (i <= j) {
+			swapHonSo(b[i], b[j]);
+			i++;
+			j--;
+		}
+	}
+	if (left < j) quickSortGiamDan(b, left, j);
+	if (i < right) quickSortGiamDan(b, i, right);
+}
+
+void sapXepGiamDanQuickSort(HonSo* b, int n) {
+	quickSortGiamDan(b, 0, n - 1);
+	printf("\nDanh sách hỗn số sau khi sắp xếp giảm dần (Quick Sort):\n");
+	inDanhSachHonSo(b, n);
+}
 
 
 
@@ -300,10 +344,12 @@ void phan2Bai2() {
 	sapXepGiamDanInterchangeSort(b, n);*/
 
 	//selection sort
-	sapXepTangDanSelectionSort(b, n);
-	sapXepGiamDanSelectionSort(b, n);
+	/*sapXepTangDanSelectionSort(b, n);
+	sapXepGiamDanSelectionSort(b, n);*/
 
-	
+	//quicksort
+	sapXepTangDanQuickSort(b, n);
+	sapXepGiamDanQuickSort(b, n);
 
 	free(b);
 	return;
