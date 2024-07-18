@@ -101,6 +101,39 @@ PhanSo chuyenHonSoThanhPhanSo(HonSo hs) {
 	return ps;
 }
 
+HonSo chuyenPhanSoThanhHonSo(PhanSo ps) {
+	int nguyen = ps.tu / ps.mau;
+	int tuHonSo = ps.tu % ps.mau;
+
+	HonSo hs;
+	hs.nguyen = nguyen;
+	hs.tu = tuHonSo;
+	hs.mau = ps.mau;
+
+	return hs;
+}
+
+PhanSo khoiTaoNgauNhien1PhanSo() {
+	PhanSo ps;
+	ps.tu = rand() % 10;
+	do {
+		ps.mau = rand() % 10;  // Mẫu số từ 1 đến 9
+	} while (ps.mau == 0);
+
+	return ps;
+
+}
+
+void thucHienChuyenDoiPhanSoThanhHonSo() {
+	PhanSo ps = khoiTaoNgauNhien1PhanSo();
+	HonSo hs = chuyenPhanSoThanhHonSo(ps);
+	printf("\nCâu 5.\nPhân số ngẫu nhiên là: %d/%d\n", ps.tu, ps.mau);
+	printf("Hỗn số tương ứng là: %d %d/%d\n", hs.nguyen, hs.tu, hs.mau);
+}
+
+
+
+
 void thucHienChuyenDoiHonSoThanhPhanSo(HonSo* b, int n) {
 	//chọn ngẫu nhiên 1 hỗn số trong mảng b
 	int i = rand() % n;
@@ -130,7 +163,9 @@ void phan2Bai2() {
 	//thucHienSoSanh2HonSo(b, n);
 
 	//cau 4
-	thucHienChuyenDoiHonSoThanhPhanSo(b, n);
+	//thucHienChuyenDoiHonSoThanhPhanSo(b, n);
 
+	//cau 5
+	thucHienChuyenDoiPhanSoThanhHonSo();
 	return;
 }
