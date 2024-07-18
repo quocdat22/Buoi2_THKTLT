@@ -9,6 +9,11 @@ struct HonSo {
 	int mau;
 };
 
+struct PhanSo {
+	int tu;
+	int mau;
+};
+
 HonSo khoiTaoHonSo() {
 	HonSo hs;
 	hs.nguyen = rand()% 10;
@@ -86,6 +91,25 @@ void thucHienSoSanh2HonSo(HonSo* b, int n) {
 	soSanhHonSo(a, c);
 }
 
+//chuyển hỗn số thành phân số
+PhanSo chuyenHonSoThanhPhanSo(HonSo hs) {
+	int tu = hs.nguyen * hs.mau + hs.tu;
+	int mau = hs.mau;
+	PhanSo ps;
+	ps.tu = tu;
+	ps.mau = mau;
+	return ps;
+}
+
+void thucHienChuyenDoiHonSoThanhPhanSo(HonSo* b, int n) {
+	//chọn ngẫu nhiên 1 hỗn số trong mảng b
+	int i = rand() % n;
+	HonSo a = b[i];
+	PhanSo ps = chuyenHonSoThanhPhanSo(a);
+	printf("\nCâu 4.\nHỗn số ngẫu nhiên trong danh sách là: %d.(%d %d/%d)\n", i, a.nguyen, a.tu, a.mau);
+	printf("Phân số tương ứng là: %d/%d\n", ps.tu, ps.mau);
+}
+
 
 void phan2Bai2() {
 	srand(time(NULL));
@@ -103,7 +127,10 @@ void phan2Bai2() {
 	inDanhSachHonSo(b, n);
 
 	//cau 3
-	thucHienSoSanh2HonSo(b, n);
+	//thucHienSoSanh2HonSo(b, n);
+
+	//cau 4
+	thucHienChuyenDoiHonSoThanhPhanSo(b, n);
 
 	return;
 }
