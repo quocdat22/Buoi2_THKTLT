@@ -35,6 +35,38 @@ void inCacSoNguyenToNhoHonN(int* &a, int n) {
 }
 
 
+//Tính tổng các phần tử có chữ số đầu là chữ số lẻ
+bool kiemTraSoDauLe(int number) {
+
+	while (number >= 10) {
+		number /= 10;
+	}
+	if (number % 2 != 0) {
+		return true;
+	}
+	return false;
+
+	//le = true, chan = false
+}
+
+void tinhTongPhanTuDauLe(int n) {
+	int sum = 0;
+
+	for (int i = 0; i < n; i++) {
+		if (kiemTraSoNguyenTo(i)) {
+			if (kiemTraSoDauLe(i)) {
+				sum += i;
+			}
+		}
+
+	}
+
+	printf("Tong cac phan tu co chu so dau la chu so le trong danh sach so nguyen to la: %d\n", sum);
+}
+
+
+
+
 
 
 void phan3Bai1() {
@@ -47,7 +79,7 @@ void phan3Bai1() {
 	inCacSoNguyenToNhoHonN(a,n);
 	printf("\n");
 
-	
+	tinhTongPhanTuDauLe(n);
 	
 	return;
 }
