@@ -185,6 +185,32 @@ void inDayConGiamDaiNhat(int* a, int n) {
 	free(lis);
 }
 
+void timPhanTuNhoThuHai(int* a, int n) {
+	if (n < 2) {
+		printf("Mang phai co it nhat 2 phan tu\n");
+		return;
+	}
+	int minFirst = INT_MAX;
+	int minSecond = INT_MAX;
+
+	for (int i = 0; i < n; i++) {
+		if (a[i] < minFirst) {
+			minSecond = minFirst;
+			minFirst = a[i];
+		}
+		else if (a[i] > minFirst && a[i] < minSecond) {
+			minSecond = a[i];
+		}
+	}
+
+	if (minSecond == INT_MAX) {
+		printf("Khong co phan tu nho thu hai trong mang\n");
+	}
+	else {
+		printf("Phan tu nho thu hai trong mang la: %d\n", minSecond);
+	}
+}
+
 void phan3Bai1() {
 	srand(time(NULL));
 	int* a;
@@ -205,7 +231,9 @@ void phan3Bai1() {
 
 	//sapXepMangChanTangLeGiam(a, n);
 	
-	inDayConGiamDaiNhat(a, n);
+	//inDayConGiamDaiNhat(a, n);
+
+	timPhanTuNhoThuHai(a, n);
 
 	free(a);
 	return;
