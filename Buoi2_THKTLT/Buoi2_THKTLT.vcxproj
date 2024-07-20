@@ -130,6 +130,7 @@
     <ClCompile Include="Phan2Bai1.cpp" />
     <ClCompile Include="Buoi2_THKTLT.cpp" />
     <ClCompile Include="Phan2Bai2.cpp" />
+    <ClCompile Include="Phan3Bai1.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaiTap.h" />

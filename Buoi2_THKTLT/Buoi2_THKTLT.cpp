@@ -4,7 +4,8 @@
 
 int main()
 {
-    phan2Bai2();
+    phan3Bai1();
+    //phan2Bai2();
     //phan2Bai1();
 
    
