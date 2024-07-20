@@ -104,6 +104,31 @@ void demSoLanXuatHienMoiPhanTu(int* a, int n) {
 
 }
 
+//Sắp xếp mảng có số chẵn tăng dần, số lẻ giảm dần.
+void sapXepMangChanTangLeGiam(int* a, int n) {
+
+	for (int i = 0; i < n - 1; i++) {
+		for (int j = i + 1; j < n; j++) {
+			if (a[i] % 2 == 0 && a[j] % 2 == 0) {
+				if (a[i] > a[j]) {
+					int temp = a[i];
+					a[i] = a[j];
+					a[j] = temp;
+				}
+			}
+			else if (a[i] % 2 != 0 && a[j] % 2 != 0) {
+				if (a[i] < a[j]) {
+					int temp = a[i];
+					a[i] = a[j];
+					a[j] = temp;
+				}
+			}
+		}
+	}
+	printf("Mang sau khi sap xep (Chan tang dan, le gian dan): ");
+	inMang(a, n);
+}
+
 void phan3Bai1() {
 	srand(time(NULL));
 	int* a;
@@ -120,7 +145,9 @@ void phan3Bai1() {
 	khoiTaoGiaTriNgauNhien(a, n);
 	inMang(a, n);
 
-	demSoLanXuatHienMoiPhanTu(a, n);
+	//demSoLanXuatHienMoiPhanTu(a, n);
+
+	sapXepMangChanTangLeGiam(a, n);
 	
 
 	free(a);
