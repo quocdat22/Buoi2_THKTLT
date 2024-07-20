@@ -129,6 +129,62 @@ void sapXepMangChanTangLeGiam(int* a, int n) {
 	inMang(a, n);
 }
 
+//Tìm dãy con giảm dài nhất trong a.
+int max(int a, int b) {
+	return (a > b) ? a : b;
+}
+
+void inDayConGiamDaiNhat(int* a, int n) {
+	int* dp = (int*)malloc(n * sizeof(int));
+	int* prev = (int*)malloc(n * sizeof(int));
+	int maxLength = 1;
+	int endIndex = 0;
+
+	// Khởi tạo giá trị ban đầu cho dp và prev
+	for (int i = 0; i < n; i++) {
+		dp[i] = 1;
+		prev[i] = -1;
+	}
+
+	// Tính toán giá trị của dp[] và prev[]
+	for (int i = 1; i < n; i++) {
+		for (int j = 0; j < i; j++) {
+			if (a[i] < a[j] && dp[i] < dp[j] + 1) {
+				dp[i] = dp[j] + 1;
+				prev[i] = j;
+			}
+		}
+		if (dp[i] > maxLength) {
+			maxLength = dp[i];
+			endIndex = i;
+		}
+	}
+
+	// In dãy con giảm dài nhất
+	printf("Do dai day con giam dai nhat la: %d\n", maxLength);
+	printf("Day con giam dai nhat la: ");
+
+	// Truy ngược lại để tìm dãy con giảm dài nhất
+	int* lis = (int*)malloc(maxLength * sizeof(int));
+	int k = maxLength - 1;
+	for (int i = endIndex; i >= 0; i = prev[i]) {
+		lis[k--] = a[i];
+		if (prev[i] == -1) {
+			break;
+		}
+	}
+
+	for (int i = 0; i < maxLength; i++) {
+		printf("%d ", lis[i]);
+	}
+	printf("\n");
+
+	// Giải phóng bộ nhớ
+	free(dp);
+	free(prev);
+	free(lis);
+}
+
 void phan3Bai1() {
 	srand(time(NULL));
 	int* a;
@@ -147,8 +203,9 @@ void phan3Bai1() {
 
 	//demSoLanXuatHienMoiPhanTu(a, n);
 
-	sapXepMangChanTangLeGiam(a, n);
+	//sapXepMangChanTangLeGiam(a, n);
 	
+	inDayConGiamDaiNhat(a, n);
 
 	free(a);
 	return;
