@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include "BaiTap.h"
 #include <stdlib.h>
+#include <time.h>
 
 
 void nhapN(int &n) {
@@ -64,22 +65,64 @@ void tinhTongPhanTuDauLe(int n) {
 	printf("Tong cac phan tu co chu so dau la chu so le trong danh sach so nguyen to la: %d\n", sum);
 }
 
+void khoiTaoMangDong(int* &a, int n) {
+	a = (int*)malloc(n * sizeof(int));
+}
 
+void khoiTaoGiaTriNgauNhien(int* a, int n) {
+	for (int i = 0; i < n; i++) {
+		a[i] = rand() % 100;
+	}
+}
+void inMang(int* a, int n) {
+	for (int i = 0; i < n; i++) {
+		printf("%d ", a[i]);
+	}
+	printf("\n");
+}
 
+void demSoLanXuatHienMoiPhanTu(int* a, int n) {
+	int* b;
+	int count = 0;
+	b = (int*)malloc(n * sizeof(int));
+	for (int i = 0; i < n; i++) {
+		b[i] = 0;
+	}
+	for (int i = 0; i < n; i++) {
+		if (b[i] == 0) {
+			count = 1;
+			for (int j = i + 1; j < n; j++) {
+				if (a[i] == a[j]) {
+					count++;
+					b[j] = 1;
+				}
+			}
+			printf("So %d xuat hien %d lan\n", a[i], count);
+		}
+	}
+	free(b);
 
-
+}
 
 void phan3Bai1() {
+	srand(time(NULL));
 	int* a;
 	
 	int n;
 	nhapN(n);
-	a = (int*)malloc(n * sizeof(int));
+	khoiTaoMangDong(a, n);
 	//printf("Cac so nguyen to nho hon %d la: ", n);
-	inCacSoNguyenToNhoHonN(a,n);
-	printf("\n");
+	/*inCacSoNguyenToNhoHonN(a,n);
+	printf("\n");*/
 
-	tinhTongPhanTuDauLe(n);
+	//tinhTongPhanTuDauLe(n);
+
+	khoiTaoGiaTriNgauNhien(a, n);
+	inMang(a, n);
+
+	demSoLanXuatHienMoiPhanTu(a, n);
 	
+
+	free(a);
 	return;
 }
