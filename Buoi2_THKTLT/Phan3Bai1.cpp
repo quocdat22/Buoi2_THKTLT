@@ -272,6 +272,55 @@ void sapXepMangChanTangLeGiuNguyenViTri(int* a, int n) {
 	inMang(a, n);
 }
 
+//Sắp xếp mảng: số lẻ ở đầu mảng, số chẵn ở cuối mảng.
+void sapXepMangLeDauChanCuoi(int* a, int n) {
+	//cach 1 (ko toi uu ve vì cần mảng phụ)
+	/*int* b = (int*)malloc(n * sizeof(int));
+	int count = 0;
+	for (int i = 0; i < n; i++) {
+		if (a[i] % 2 != 0) {
+			b[count++] = a[i];
+		}
+	}
+	for (int i = 0; i < n; i++) {
+		if (a[i] % 2 == 0) {
+			b[count++] = a[i];
+		}
+	}
+	for (int i = 0; i < n; i++) {
+		a[i] = b[i];
+	}
+	free(b);
+	printf("Mang sau khi sap xep (Le dau, chan cuoi): ");
+	inMang(a, n);*/
+
+	//cach 2
+	int left = 0, right = n - 1;
+
+	while (left < right) {
+		// Tìm phần tử lẻ từ bên trái
+		while (a[left] % 2 != 0 && left < right) {
+			left++;
+		}
+
+		// Tìm phần tử chẵn từ bên phải
+		while (a[right] % 2 == 0 && left < right) {
+			right--;
+		}
+
+		// Hoán đổi phần tử lẻ và phần tử chẵn
+		if (left < right) {
+			int temp = a[left];
+			a[left] = a[right];
+			a[right] = temp;
+			left++;
+			right--;
+		}
+	}
+	printf("Mang sau khi sap xep (Le dau, chan cuoi): ");
+	inMang(a, n);
+}
+
 
 
 
@@ -303,7 +352,9 @@ void phan3Bai1() {
 	//timCacPhanTuThoaDieuKien(a, n, 36);
 
 
-	sapXepMangChanTangLeGiuNguyenViTri(a, n);
+	//sapXepMangChanTangLeGiuNguyenViTri(a, n);
+
+	sapXepMangLeDauChanCuoi(a, n);
 
 	free(a);
 	return;
