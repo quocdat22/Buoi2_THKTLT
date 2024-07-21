@@ -243,6 +243,35 @@ void timCacPhanTuThoaDieuKien(int* a, int n, int x) {
 	}
 }
 
+//Sắp xếp mảng sao cho các phần tử chẵn tăng dần, các phần tử lẻ giữ nguyên vị trí.
+void sapXepMangChanTangLeGiuNguyenViTri(int* a, int n) {
+	int* b = (int*)malloc(n * sizeof(int));
+	int count = 0;
+	for (int i = 0; i < n; i++) {
+		if (a[i] % 2 == 0) {
+			b[count++] = a[i];
+		}
+	}
+	for (int i = 0; i < count - 1; i++) {
+		for (int j = i + 1; j < count; j++) {
+			if (b[i] > b[j]) {
+				int temp = b[i];
+				b[i] = b[j];
+				b[j] = temp;
+			}
+		}
+	}
+	count = 0;
+	for (int i = 0; i < n; i++) {
+		if (a[i] % 2 == 0) {
+			a[i] = b[count++];
+		}
+	}
+	free(b);
+	printf("Mang sau khi sap xep (Chan tang dan, le giu nguyen vi tri): ");
+	inMang(a, n);
+}
+
 
 
 
@@ -271,8 +300,10 @@ void phan3Bai1() {
 
 	//timPhanTuNhoThuHai(a, n);
 
-	timCacPhanTuThoaDieuKien(a, n, 36);
+	//timCacPhanTuThoaDieuKien(a, n, 36);
 
+
+	sapXepMangChanTangLeGiuNguyenViTri(a, n);
 
 	free(a);
 	return;
