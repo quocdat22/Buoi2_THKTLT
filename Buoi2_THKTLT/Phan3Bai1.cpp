@@ -295,6 +295,7 @@ void sapXepMangLeDauChanCuoi(int* a, int n) {
 	inMang(a, n);*/
 
 	//cach 2
+	
 	int left = 0, right = n - 1;
 
 	while (left < right) {
@@ -354,6 +355,7 @@ void phan3Bai1() {
 
 	//sapXepMangChanTangLeGiuNguyenViTri(a, n);
 
+	
 	sapXepMangLeDauChanCuoi(a, n);
 
 	free(a);
