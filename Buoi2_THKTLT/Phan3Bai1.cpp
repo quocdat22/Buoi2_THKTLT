@@ -211,6 +211,42 @@ void timPhanTuNhoThuHai(int* a, int n) {
 	}
 }
 
+
+bool kiemTraChuSo(int number, int digit) {
+	while (number > 0) {
+		if (number % 10 == digit) {
+			return true;
+		}
+		number /= 10;
+	}
+	return false;
+}
+
+bool kiemTraPhanTuThoaDieuKien(int number, int digit1, int digit2) {
+	return kiemTraChuSo(number, digit1) && kiemTraChuSo(number, digit2);
+}
+
+void timCacPhanTuThoaDieuKien(int* a, int n, int x) {
+	int digit1 = x / 10; // Chữ số hàng chục
+	int digit2 = x % 10; // Chữ số hàng đơn vị
+
+	printf("Cac phan tu trong mang a chua cac chu so cua %d la: ", x);
+	bool found = false;
+	for (int i = 0; i < n; i++) {
+		if (kiemTraPhanTuThoaDieuKien(a[i], digit1, digit2)) {
+			printf("%d ", a[i]);
+			found = true;
+		}
+	}
+	if (!found) {
+		printf("Khong co phan tu nao thoa man\n");
+	}
+}
+
+
+
+
+
 void phan3Bai1() {
 	srand(time(NULL));
 	int* a;
@@ -233,7 +269,10 @@ void phan3Bai1() {
 	
 	//inDayConGiamDaiNhat(a, n);
 
-	timPhanTuNhoThuHai(a, n);
+	//timPhanTuNhoThuHai(a, n);
+
+	timCacPhanTuThoaDieuKien(a, n, 36);
+
 
 	free(a);
 	return;
