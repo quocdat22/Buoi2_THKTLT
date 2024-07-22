@@ -81,6 +81,44 @@ void sapXepMangCoNguyenChanDauLeCuoi(HonSo* a, int n) {
 	}
 }
 
+//Tìm hỗn số x theo giải thuật binary search trong mảng b đã được sắp xếp tang/giảm
+void sapXepMangTang(HonSo* a, int n) {
+	for(int i = 0; i < n - 1; i++) {
+		for(int j = i + 1; j < n; j++) {
+			if(a[i].nguyen > a[j].nguyen) {
+				HonSo temp = a[i];
+				a[i] = a[j];
+				a[j] = temp;
+			}
+		}
+	}
+}
+void timXBinarySeach(HonSo* a, int n, HonSo x) {
+	int left = 0, right = n - 1;
+	while(left <= right) {
+		int mid = (left + right) / 2;
+		if(a[mid].nguyen == x.nguyen && a[mid].tuSo == x.tuSo && a[mid].mauSo == x.mauSo) {
+			printf("Tim thay gia tri can tim tai vi tri %d\n", mid);
+			return;
+		}
+		if(a[mid].nguyen < x.nguyen) {
+			left = mid + 1;
+		}
+		else {
+			right = mid - 1;
+		}
+	}
+	printf("Khong tim thay gia tri can tim trong mang\n");
+}
+
+void thucThiTimHonSoSapXepTangBinarySeach(HonSo* b, int n) {
+	HonSo x;
+	printf("Nhap gia tri can tim: ");
+	scanf_s("%d %d/%d", &x.nguyen, &x.tuSo, &x.mauSo);
+	//sapXepMangTang(b, n);
+	timXBinarySeach(b, n, x);
+}
+
 void phan3Bai2() {
 	HonSo* b;
 	int n;
@@ -93,9 +131,12 @@ void phan3Bai2() {
 
 	//thucThiTimX(b, n);
 
-	sapXepMangCoNguyenChanDauLeCuoi(b, n);
+	/*sapXepMangCoNguyenChanDauLeCuoi(b, n);
 	printf("Mang Hon So sau khi sap xep la: \n");
-	inMangHonSo(b, n);
+	inMangHonSo(b, n);*/
+
+	thucThiTimHonSoSapXepTangBinarySeach(b, n);
+
 
 	free(b);
 
