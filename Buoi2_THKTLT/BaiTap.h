@@ -7,4 +7,6 @@ void phan2Bai2();
 
 void phan3Bai1();
 
+void phan3Bai2();
+
 #endif
