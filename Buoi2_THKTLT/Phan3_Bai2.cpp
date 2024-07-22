@@ -51,6 +51,36 @@ void thucThiTimX(HonSo* b, int n) {
 	}
 }
 
+//Sắp xếp b sao cho các phần tử có phần nguyên chẵn lên đầu, phần tử có phần nguyên lẻ ở cuối mảng
+void sapXepMangCoNguyenChanDauLeCuoi(HonSo* a, int n) {
+	/*for(int i = 0; i < n - 1; i++) {
+		for(int j = i + 1; j < n; j++) {
+			if(a[i].nguyen % 2 == 0 && a[j].nguyen % 2 != 0) {
+				HonSo temp = a[i];
+				a[i] = a[j];
+				a[j] = temp;
+			}
+		}
+	}*/
+
+	int left = 0, right = n - 1;
+	while(left < right) {
+		while(a[left].nguyen % 2 == 0 && left < right) {
+			left++;
+		}
+		while(a[right].nguyen % 2 != 0 && left < right) {
+			right--;
+		}
+		if(left < right) {
+			HonSo temp = a[left];
+			a[left] = a[right];
+			a[right] = temp;
+			left++;
+			right--;
+		}
+	}
+}
+
 void phan3Bai2() {
 	HonSo* b;
 	int n;
@@ -61,7 +91,12 @@ void phan3Bai2() {
 	printf("Mang Hon So vua khoi tao la: \n");
 	inMangHonSo(b, n);
 
-	thucThiTimX(b, n);
+	//thucThiTimX(b, n);
 
+	sapXepMangCoNguyenChanDauLeCuoi(b, n);
+	printf("Mang Hon So sau khi sap xep la: \n");
+	inMangHonSo(b, n);
+
+	free(b);
 
 }
