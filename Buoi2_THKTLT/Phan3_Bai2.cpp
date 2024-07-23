@@ -210,6 +210,26 @@ void xuatViTriPhanNguyenChan(HonSo* a, int n) {
 	printf("\n");
 }
 
+//Xuất vị trí của phần tử lớn nhất/nhỏ nhất của b.
+void xuatViTriPhanTuLonNhat(HonSo* a, int n) {
+	int max = 0;
+	for(int i = 1; i < n; i++) {
+		if(a[i].nguyen * a[i].mauSo + a[i].tuSo > a[max].nguyen * a[max].mauSo + a[max].tuSo) {
+			max = i;
+		}
+	}
+	printf("Vi tri phan tu lon nhat cua mang la: %d\n", max);
+}
+//nho nhat
+void xuatViTriPhanTuNhoNhat(HonSo* a, int n) {
+	int min = 0;
+	for(int i = 1; i < n; i++) {
+		if(a[i].nguyen * a[i].mauSo + a[i].tuSo < a[min].nguyen * a[min].mauSo + a[min].tuSo) {
+			min = i;
+		}
+	}
+	printf("Vi tri phan tu nho nhat cua mang la: %d\n", min);
+}
 
 void phan3Bai2() {
 	srand(time(NULL));
@@ -254,7 +274,10 @@ void phan3Bai2() {
 	/*timPhanTuLonNhat(b, n);
 	timPhanTuNhoNhat(b, n);*/
 
-	xuatViTriPhanNguyenChan(b, n);
+	//xuatViTriPhanNguyenChan(b, n);
+
+	xuatViTriPhanTuLonNhat(b, n);
+	xuatViTriPhanTuNhoNhat(b, n);
 
 	free(b);
 
