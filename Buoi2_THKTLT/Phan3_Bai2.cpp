@@ -1,6 +1,7 @@
 #include "BaiTap.h"
 #include<stdio.h>
 #include<stdlib.h>
+#include <time.h>
 
 struct HonSo {
 	int nguyen;
@@ -177,9 +178,41 @@ void tinhTongMangHonSo(HonSo* a, int n) {
 	printf("Tong cua mang Hon So la: %d %d/%d\n", tongTuSo / tongMauSo, tongTuSo % tongMauSo, tongMauSo);
 }
 
+//Tìm phần tử lớn nhất/nhỏ nhất của b.
+void timPhanTuLonNhat(HonSo* a, int n) {
+	int max = 0;
+	for(int i = 1; i < n; i++) {
+		if(a[i].nguyen * a[i].mauSo + a[i].tuSo > a[max].nguyen * a[max].mauSo + a[max].tuSo) {
+			max = i;
+		}
+	}
+	printf("Phan tu lon nhat cua mang la: %d %d/%d\n", a[max].nguyen, a[max].tuSo, a[max].mauSo);
+}
+//tim so nho nhat
+void timPhanTuNhoNhat(HonSo* a, int n) {
+	int min = 0;
+	for(int i = 1; i < n; i++) {
+		if(a[i].nguyen * a[i].mauSo + a[i].tuSo < a[min].nguyen * a[min].mauSo + a[min].tuSo) {
+			min = i;
+		}
+	}
+	printf("Phan tu nho nhat cua mang la: %d %d/%d\n", a[min].nguyen, a[min].tuSo, a[min].mauSo);
+}
+
+//Xuất vị trí phần tử có phần nguyên chẵn của b.
+void xuatViTriPhanNguyenChan(HonSo* a, int n) {
+	printf("Vi tri cac phan tu co phan nguyen chan la: ");
+	for(int i = 0; i < n; i++) {
+		if(a[i].nguyen % 2 == 0) {
+			printf("%d ", i);
+		}
+	}
+	printf("\n");
+}
 
 
 void phan3Bai2() {
+	srand(time(NULL));
 	HonSo* b;
 	int n;
 	printf("Nhap so luong phan tu cua mang: ");
@@ -216,7 +249,13 @@ void phan3Bai2() {
 	}
 	free(c);*/
 
-	tinhTongMangHonSo(b, n);
+	//tinhTongMangHonSo(b, n);
+
+	/*timPhanTuLonNhat(b, n);
+	timPhanTuNhoNhat(b, n);*/
+
+	xuatViTriPhanNguyenChan(b, n);
+
 	free(b);
 
 }
