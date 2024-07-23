@@ -146,6 +146,25 @@ void themPhanTuK(HonSo* &a, int &n, HonSo x, int k) {
 	n++;
 }
 
+//Tạo mảng c chứa các phần tử là phân số được đổi từ các phần tử hỗn số của mảng b.
+void taoMangPhanSoTuMangHonSo(HonSo* a, int n, PhanSo* &c, int &m) {
+	m = 0;
+	for(int i = 0; i < n; i++) {
+		if(a[i].nguyen != 0) {
+			m++;
+		}
+	}
+	c = (PhanSo*)malloc(m * sizeof(PhanSo));
+	int j = 0;
+	for(int i = 0; i < n; i++) {
+		if(a[i].nguyen != 0) {
+			c[j].tuSo = a[i].nguyen * a[i].mauSo + a[i].tuSo;
+			c[j].mauSo = a[i].mauSo;
+			j++;
+		}
+	}
+}
+
 
 void phan3Bai2() {
 	HonSo* b;
@@ -169,10 +188,21 @@ void phan3Bai2() {
 	printf("Mang Hon So sau khi xoa phan tu thu 2 la: \n");
 	inMangHonSo(b, n);*/
 
-	themPhanTuK(b, n, {1, 2, 3}, 2);
+	/*themPhanTuK(b, n, {1, 2, 3}, 2);
 	printf("Mang Hon So sau khi them phan tu (1 2/3) tai vi tri 2 la: \n");
-	inMangHonSo(b, n);
+	inMangHonSo(b, n);*/
 
+	PhanSo* c;
+	int m;
+	taoMangPhanSoTuMangHonSo(b, n, c, m);
+	printf("Mang Phan So tu mang Hon So la: \n");
+	printf("STT\tTuSo/MauSo\n");
+	for(int i = 0; i < m; i++) {
+		
+		printf("%d\t%d/%d\n",i, c[i].tuSo, c[i].mauSo);
+	}
+
+	free(c);
 	free(b);
 
 }
