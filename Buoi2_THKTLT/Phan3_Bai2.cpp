@@ -165,6 +165,19 @@ void taoMangPhanSoTuMangHonSo(HonSo* a, int n, PhanSo* &c, int &m) {
 	}
 }
 
+//Tính tổng các phần tử của mảng b in ra ket qua.
+void tinhTongMangHonSo(HonSo* a, int n) {
+	int tongNguyen = 0, tongTuSo = 0, tongMauSo = 1;
+	for (int i = 0; i < n; i++) {
+		tongNguyen += a[i].nguyen;
+		tongTuSo += a[i].tuSo;
+		tongMauSo *= a[i].mauSo;
+	}
+	tongTuSo += tongNguyen * tongMauSo;
+	printf("Tong cua mang Hon So la: %d %d/%d\n", tongTuSo / tongMauSo, tongTuSo % tongMauSo, tongMauSo);
+}
+
+
 
 void phan3Bai2() {
 	HonSo* b;
@@ -192,7 +205,7 @@ void phan3Bai2() {
 	printf("Mang Hon So sau khi them phan tu (1 2/3) tai vi tri 2 la: \n");
 	inMangHonSo(b, n);*/
 
-	PhanSo* c;
+	/*PhanSo* c;
 	int m;
 	taoMangPhanSoTuMangHonSo(b, n, c, m);
 	printf("Mang Phan So tu mang Hon So la: \n");
@@ -201,8 +214,9 @@ void phan3Bai2() {
 		
 		printf("%d\t%d/%d\n",i, c[i].tuSo, c[i].mauSo);
 	}
+	free(c);*/
 
-	free(c);
+	tinhTongMangHonSo(b, n);
 	free(b);
 
 }
