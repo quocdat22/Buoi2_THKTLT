@@ -33,11 +33,8 @@ Câu 7
 
 ### 📔Bài 2
 
-Câu 1
-![Câu 1](./HinhAnhKetQua/Phan2/Bai2/Cau1%20va%20Cau2.png.png "Câu 1")
-
-Câu 2
-![Câu 2](./HinhAnhKetQua/Phan2/Bai2/Cau2.png "Câu 2")
+Câu 1 - Câu 2
+![Câu 1 2](./HinhAnhKetQua/Phan2/Bai2/Cau1Cau2.png "Câu 1 2")
 
 Câu 3
 ![Câu 3](./HinhAnhKetQua/Phan2/Bai2/Cau3.png "Câu 3")
