@@ -136,6 +136,16 @@ void xoaPhanTuK(HonSo* &a, int &n, int k) {
 	n--;
 }
 
+//Thêm hỗn số x vào mảng b tại vị trí k.
+void themPhanTuK(HonSo* &a, int &n, HonSo x, int k) {
+	a = (HonSo*)realloc(a, (n + 1) * sizeof(HonSo));
+	for(int i = n; i > k; i--) {
+		a[i] = a[i - 1];
+	}
+	a[k] = x;
+	n++;
+}
+
 
 void phan3Bai2() {
 	HonSo* b;
@@ -155,8 +165,12 @@ void phan3Bai2() {
 
 	//thucThiTimHonSoSapXepTangBinarySeach(b, n);
 
-	xoaPhanTuK(b, n, 2);
+	/*xoaPhanTuK(b, n, 2);
 	printf("Mang Hon So sau khi xoa phan tu thu 2 la: \n");
+	inMangHonSo(b, n);*/
+
+	themPhanTuK(b, n, {1, 2, 3}, 2);
+	printf("Mang Hon So sau khi them phan tu (1 2/3) tai vi tri 2 la: \n");
 	inMangHonSo(b, n);
 
 	free(b);
