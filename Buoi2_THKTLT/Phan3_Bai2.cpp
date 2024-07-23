@@ -8,6 +8,11 @@ struct HonSo {
 	int mauSo;
 };
 
+struct PhanSo {
+	int tuSo;
+	int mauSo;
+};
+
 void khoiTaoMangHonSo(HonSo* &a, int n) {
 	a = (HonSo*)malloc(n * sizeof(HonSo));
 }
@@ -115,9 +120,22 @@ void thucThiTimHonSoSapXepTangBinarySeach(HonSo* b, int n) {
 	HonSo x;
 	printf("Nhap gia tri can tim: ");
 	scanf_s("%d %d/%d", &x.nguyen, &x.tuSo, &x.mauSo);
-	//sapXepMangTang(b, n);
+	sapXepMangTang(b, n);
+	printf("Mang Hon So sau khi sap xep (tang) la: \n");
+	inMangHonSo(b, n);
 	timXBinarySeach(b, n, x);
 }
+
+//Chia mảng b thành 2 mảng s1 và s2, với s1 chứa các phần nguyên, s2 chứa phân số.
+
+//Xóa phần tử thứ k trong mảng b
+void xoaPhanTuK(HonSo* &a, int &n, int k) {
+	for(int i = k; i < n - 1; i++) {
+		a[i] = a[i + 1];
+	}
+	n--;
+}
+
 
 void phan3Bai2() {
 	HonSo* b;
@@ -135,8 +153,11 @@ void phan3Bai2() {
 	printf("Mang Hon So sau khi sap xep la: \n");
 	inMangHonSo(b, n);*/
 
-	thucThiTimHonSoSapXepTangBinarySeach(b, n);
+	//thucThiTimHonSoSapXepTangBinarySeach(b, n);
 
+	xoaPhanTuK(b, n, 2);
+	printf("Mang Hon So sau khi xoa phan tu thu 2 la: \n");
+	inMangHonSo(b, n);
 
 	free(b);
 
